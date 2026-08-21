@@ -7,22 +7,22 @@ packaging convention. Facts from
 
 ## Model
 
-| Property | Value |
-|---|---|
-| Upstream | [VAST-AI-Research/SkinTokens](https://github.com/VAST-AI-Research/SkinTokens) |
-| License | **MIT** — RFD 0046 marked this "review pending"; it isn't ambiguous. Confirmed by reading the real `LICENSE` file at `VAST-AI-Research/SkinTokens` directly (`gh api repos/VAST-AI-Research/SkinTokens/contents/LICENSE`), not inferred. Flagging for whoever owns RFD 0046 to close out the pending status. |
-| Parameters | 0.5 B, estimated |
-| bf16 | 1.0 GB — the ship format (no Q4_K_M at this size) |
+| Property   | Value                                                                                                                                                                                                                                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Upstream   | [VAST-AI-Research/SkinTokens](https://github.com/VAST-AI-Research/SkinTokens)                                                                                                                                                                                                                                |
+| License    | **MIT** — RFD 0046 marked this "review pending"; it isn't ambiguous. Confirmed by reading the real `LICENSE` file at `VAST-AI-Research/SkinTokens` directly (`gh api repos/VAST-AI-Research/SkinTokens/contents/LICENSE`), not inferred. Flagging for whoever owns RFD 0046 to close out the pending status. |
+| Parameters | 0.5 B, estimated                                                                                                                                                                                                                                                                                             |
+| bf16       | 1.0 GB — the ship format (no Q4_K_M at this size)                                                                                                                                                                                                                                                            |
 
 ## Interface
 
 `POST /predict`:
 
-| Input | Type | Default | Note |
-|---|---|---|---|
-| `mesh` | Path/URL/base64 | required | GLB or USD |
-| `rig_mode` | str | full | `skeleton`, `skin`, or `full` — **not** `template`; SkinTokens rejects it, RFD 0035 records that UniRig is the only backend for template mode |
-| `seed` | int | -1 | |
+| Input      | Type            | Default  | Note                                                                                                                                          |
+| ---------- | --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mesh`     | Path/URL/base64 | required | GLB or USD                                                                                                                                    |
+| `rig_mode` | str             | full     | `skeleton`, `skin`, or `full` — **not** `template`; SkinTokens rejects it, RFD 0035 records that UniRig is the only backend for template mode |
+| `seed`     | int             | -1       |                                                                                                                                               |
 
 Returns `{layer, vrm, joint_count, seed, stub}`.
 
