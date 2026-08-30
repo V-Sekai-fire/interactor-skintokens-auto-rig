@@ -1,0 +1,30 @@
+[workspace]
+authors = ["K. S. Ernest (iFire) Lee <ernest.lee@chibifire.com>"]
+channels = ["conda-forge"]
+name = "skintokens-auto-rig"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.11.*"
+pytorch-gpu = "*"
+numpy = "*"
+trimesh = "*"
+einops = "*"
+omegaconf = "*"
+scipy = ">=1.17.1,<2"
+
+[pypi-dependencies]
+transformers = ">=4.57"
+lightning = "*"
+python-box = "*"
+addict = "*"
+fast-simplification = "*"
+huggingface_hub = "*"
+usd-core = "*"
+diffusers = ">=0.35"
+
+[system-requirements]
+cuda = "12"

@@ -1,1 +1,4 @@
-__pycache__/
+.pixi/
+probe_mesh.npz
+probe_asset.npz
+*.log
