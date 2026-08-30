@@ -25,6 +25,7 @@ fast-simplification = "*"
 huggingface_hub = "*"
 usd-core = "*"
 diffusers = ">=0.35"
+pytest = ">=9.1.1, <10"
 
 [system-requirements]
 cuda = "12"
