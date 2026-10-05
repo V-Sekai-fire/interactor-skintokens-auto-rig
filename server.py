@@ -42,7 +42,7 @@ def _run_upstream(args: dict, work: Path) -> tuple:
     checkpoint is not yet verified against the upstream repo."""
     raise NotImplementedError(
         "Port the SkinTokens forward pass here -- see VAST-AI-Research/SkinTokens "
-        "and README's Status"
+        "and RFD 1046"
     )
 
 
@@ -53,7 +53,7 @@ def _write_joint_map(stage, joints: list) -> None:
     on any rig that names a joint differently -- RFD 0046's joint
     order trap -- so the mapping is written here and read later, not
     inferred downstream."""
-    raise NotImplementedError("Port the VRM humanoid joint-map write here -- see README's Status")
+    raise NotImplementedError("Port the VRM humanoid joint-map write here -- see RFD 1046")
 
 
 def _to_usd(mesh: Path, joints: list, work: Path):

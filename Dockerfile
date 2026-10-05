@@ -1,4 +1,4 @@
-# interactor-skintokens-auto-rig -- vast.ai worker, RFD 0036/0046.
+# interactor-skintokens-auto-rig -- GPU worker for an owned GPU, RFD 0036/0046.
 #
 # Small model (1.0 GB bf16) -- ships bf16, not Q4_K_M.
 
