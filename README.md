@@ -18,4 +18,4 @@ The contract target is the stub image, and it answers `POST /predict`. `docker b
 
 ## Licence
 
-This repository's licence is not stated. The upstream SkinTokens model is MIT.
+MIT. See [LICENSE](LICENSE). The upstream SkinTokens model is MIT.
