@@ -1,7 +1,7 @@
-"""SkinTokens auto rig. RFD 0046.
+"""SkinTokens auto rig. RFD66606-0046.
 
 The rig is an opinion about a mesh that already exists, thus it goes
-into its own USD layer over the mesh layer (RFD 0053). A GLB skin
+into its own USD layer over the mesh layer (RFD66606-0053). A GLB skin
 binds to one mesh; when retopology later changes the mesh, that skin
 breaks. A UsdSkel binding in its own layer survives a new mesh layer
 below it, and only the weights need a rebind.
@@ -15,7 +15,7 @@ from pathlib import Path
 STUB = os.environ.get("WEFTSPUN_STUB") == "1"
 _READY = {"loaded": False}
 
-# SkinTokens rejects template mode. RFD 0035 records that UniRig is
+# SkinTokens rejects template mode. RFD66606-0035 records that UniRig is
 # the only backend for it -- this model image never accepts "template".
 RIG_MODES = ("skeleton", "skin", "full")
 
@@ -50,14 +50,14 @@ def _write_joint_map(stage, joints: list) -> None:
     """Record the VRM humanoid mapping as layer metadata. USD keeps an
     ordered joint array with no humanoid meaning; VRM names its
     joints. An exporter that infers the mapping from joint names fails
-    on any rig that names a joint differently -- RFD 0046's joint
+    on any rig that names a joint differently -- RFD66606-0046's joint
     order trap -- so the mapping is written here and read later, not
     inferred downstream."""
     raise NotImplementedError("Port the VRM humanoid joint-map write here -- see RFD 1046")
 
 
 def _to_usd(mesh: Path, joints: list, work: Path):
-    """RFD 0053: the rig is a sublayer over the mesh layer, not baked
+    """RFD66606-0053: the rig is a sublayer over the mesh layer, not baked
     into it -- a new mesh layer below it keeps the joint hierarchy."""
     from pxr import Sdf, Usd, UsdGeom, UsdSkel
 

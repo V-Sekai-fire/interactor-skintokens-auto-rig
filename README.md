@@ -4,7 +4,7 @@ A model image that rigs a mesh with the SkinTokens auto-rigger and writes the ri
 
 ## What it is for
 
-The rig sits in its own USD layer, so a later retopology stage replaces the mesh layer below it and only the weights need a rebind. The service takes a mesh and a rig mode over HTTP and returns the rigged avatar. In stub mode it answers without the model; outside it, the upstream forward pass and the humanoid joint-map write are not yet ported into the server. RFD 1046 owns the design.
+The rig sits in its own USD layer, so a later retopology stage replaces the mesh layer below it and only the weights need a rebind. The service takes a mesh and a rig mode over HTTP and returns the rigged avatar. In stub mode it answers without the model; outside it, the upstream forward pass and the humanoid joint-map write are not yet ported into the server. RFD66606-1046 owns the design.
 
 ## Build and run
 

@@ -1,4 +1,4 @@
-# interactor-skintokens-auto-rig -- GPU worker for an owned GPU, RFD 0036/0046.
+# interactor-skintokens-auto-rig -- GPU worker for an owned GPU, RFD66606-0036/0046.
 #
 # Small model (1.0 GB bf16) -- ships bf16, not Q4_K_M.
 
@@ -22,7 +22,7 @@ RUN pip3 install --no-cache-dir torch --index-url https://download.pytorch.org/w
        pydantic==2.10.3 safetensors huggingface_hub==0.26.2
 
 # SkinTokens -- MIT, confirmed by reading the real LICENSE file at
-# VAST-AI-Research/SkinTokens directly (RFD 0046 had this marked
+# VAST-AI-Research/SkinTokens directly (RFD66606-0046 had this marked
 # "review pending"; it isn't ambiguous -- it's MIT).
 ARG SKINTOKENS_REPO=VAST-AI-Research/SkinTokens
 RUN mkdir -p /weights && \
