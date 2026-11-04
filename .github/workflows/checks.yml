@@ -18,3 +18,15 @@ jobs:
           python-version: "3.x"
       - run: pip install prek
       - run: prek run --all-files --show-diff-on-failure --color always
+
+  rig-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pinned double-precision Godot editor, by sha256
+        run: |
+          curl -sSL -o godot https://github.com/V-Sekai-fire/service-godot-build/releases/download/v20260930-double.1/godot.linuxbsd.editor.double.x86_64
+          echo "37c6962fcc76d1773a596440f310f52ad5cf18011e74a712a5b465c3240e919b  godot" | sha256sum -c
+          chmod +x godot
+      - name: Rig contract gate self-test (two positive, four negative controls)
+        run: ./godot --headless -s check_rig_contract.gd -- --self-test
