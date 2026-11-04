@@ -16,6 +16,12 @@ curl -X POST localhost:8000/predict -d @test_input.json -H 'Content-Type: applic
 
 The contract target is the stub image, and it answers `POST /predict`. `docker build .` builds the GPU worker image, which runs on a GPU the operator owns.
 
+```sh
+uv run --no-project --python 3.12 --with usd-core python check_rig_contract.py rig.usda
+```
+
+`check_rig_contract.py` gates a returned `rig.usda` against the rig contract: one skeleton with rest transforms, hips and head joints named, head above hips, lowest joint on the ground within one nickel (21.2 mm), hips at least 0.3 of head height. `--self-test` runs two positive and four negative controls and is a pre-commit hook. The stub layer carries no rest transforms, so it fails the first check by design until the forward pass lands.
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE). The upstream SkinTokens model is MIT.

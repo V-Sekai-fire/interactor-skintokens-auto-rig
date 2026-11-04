@@ -4,3 +4,13 @@ repos:
     hooks:
       - id: prettier
         types: [markdown]
+  - repo: local
+    hooks:
+      - id: rig-contract-self-test
+        name: rig contract gate self-test
+        entry: python check_rig_contract.py --self-test
+        language: python
+        language_version: python3.12
+        additional_dependencies: [usd-core]
+        pass_filenames: false
+        always_run: true
